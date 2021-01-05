@@ -218,15 +218,19 @@ static int16_t printf_putchar(char c, FILE *fp)
   return 0;
 }
 
-int16_t Print::printf(const char *format, ...)
+int16_t Print::vprintf(const char *format, va_list arg)
 {
   FILE f;
-  va_list ap;
-
   fdev_setup_stream(&f, printf_putchar, NULL, _FDEV_SETUP_WRITE);
   fdev_set_udata(&f, this);
+  return vfprintf(&f, format, arg);
+}
+
+int16_t Print::printf(const char *format, ...)
+{
+  va_list ap;
   va_start(ap, format);
-  return vfprintf(&f, format, ap);
+  return this->vprintf(format, ap);
 }
 
 int16_t Print::printf(const __FlashStringHelper *format, ...)

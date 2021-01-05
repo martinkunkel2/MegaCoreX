@@ -83,6 +83,7 @@ class Print
     size_t println(void);
 
     int16_t printf(const char *format, ...);
+	int16_t vprintf(const char *format, va_list arg);
     int16_t printf(const __FlashStringHelper *format, ...);
 
     virtual void flush() { /* Empty implementation for backward compatibility */ }
