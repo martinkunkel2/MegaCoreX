@@ -1,0 +1,17 @@
+{
+  "name": "framework-arduino-megaavr-megacorex",
+  "version": "1.0.7",
+  "description": "Arduino Wiring-based Framework for Microchip megaAVR microcontrollers (MegaCoreX)",
+  "keywords": [
+    "framework",
+    "arduino",
+    "microchip",
+    "megaavr"
+  ],
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinkunkel2/MegaCoreX"
+  }
+}
+
